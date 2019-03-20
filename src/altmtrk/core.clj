@@ -1,6 +1,7 @@
 (ns altmtrk.core)
 
 
+
 (defn is-prime-1 [n]
     ;; brute force test for primes
         (cond
@@ -54,3 +55,5 @@
 (defn benchmark [n]
     (println n (time (generate-first-n-primes n))))
 
+(defn -main []
+    (make-table))

@@ -1,10 +1,19 @@
 # altmtrk
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library to create primes
 
 ## Usage
 
-FIXME
+in the project folder, run
+
+lein compile
+
+start a repl
+
+run
+ (use 'altmtrk.core)
+ (make-table)
+
 
 ## License
 
