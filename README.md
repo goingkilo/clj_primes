@@ -5,14 +5,17 @@ A Clojure library to create primes
 ## Usage
 
 in the project folder, run
-
+```
 lein compile
+```
 
 start a repl
 
 run
+```
  (use 'altmtrk.core)
  (make-table)
+```
 
 
 ## License
