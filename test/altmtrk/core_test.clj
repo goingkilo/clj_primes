@@ -23,6 +23,10 @@
   (it "is-prime 25 is false"
     (should-not ( is-prime 25 ))))
 
+(describe "-1 is handled"
+  (it "is-prime -1 is false"
+    (should-not ( is-prime 25 ))))
+
 (describe "first-n-primes should return a list of n  numbers"
   (it "first-n-primes should return a list of n  numbers"
     (should (= 10 (count  (first-n-primes  10 is-prime))))))

@@ -3,8 +3,9 @@
 (defn check-prime [x]
     ;; 6k+/-1 test for primality
     (and
-        (not (= x 1))
+        (not (< x 0 ))
         (not (= x 0))
+        (not (= x 1))
         (or
             ( = x 2)
             ( = x 3)
