@@ -1,6 +1,6 @@
 (ns altmtrk.core)
 
-(defn is-prime [x]
+(defn check-prime [x]
     ;; 6k+/-1 test for primality
     (and
         (not (= x 1))
@@ -10,6 +10,18 @@
             ( = x 3)
             (= 1 (mod x 6))
             (= 5 (mod x 6)))))
+
+
+(defn is-prime [x]
+    (if (not (check-prime  x))
+        false
+        (loop [i 2 max (Math/sqrt x)]
+            (if (> i max)
+            true
+            (if (= 0 ( mod x i))
+                false
+                (recur (inc i) max))))))
+
 
 (defn first-n-primes [n predicate]
     (take n (filter predicate (range (* 10 n)))))

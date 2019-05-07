@@ -19,13 +19,17 @@
   (it "is-prime 4 is false"
     (should-not ( is-prime 4 ))))
 
+(describe "25 is composite"
+  (it "is-prime 25 is false"
+    (should-not ( is-prime 25 ))))
+
 (describe "first-n-primes should return a list of n  numbers"
   (it "first-n-primes should return a list of n  numbers"
     (should (= 10 (count  (first-n-primes  10 is-prime))))))
 
 (describe "check that the first 10 primes are correct"
   (it "first-n-primes are  return a list of n  numbers"
-    (should (= '(2 3 5 7 11 13 17 19 23 25) (first-n-primes  10 is-prime)))))
+    (should (= '(2 3 5 7 11 13 17 19 23 29) (first-n-primes  10 is-prime)))))
 
 (describe "check that make-table handles invalid inputs"
   (it "make-table  should throw error on invalid input"
