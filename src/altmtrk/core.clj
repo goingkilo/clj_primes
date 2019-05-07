@@ -11,15 +11,24 @@
             (= 1 (mod x 6))
             (= 5 (mod x 6)))))
 
-(defn first-n-primes [n]
-    (take n (filter is-prime (range (* 10 n)))))
+(defn first-n-primes [n predicate]
+    (take n (filter predicate (range (* 10 n)))))
+
+
+(defn gen-sequence [start count predicate ret]
+    ;; this is an additional way to generate n primes without using builtin methods
+    ;; it also uses injection to run the is-prime predicate
+    ;; not used for now
+    (cond
+      (= count 0)           ret
+      (predicate start)     (recur (+ start 1) (- count 1) predicate (conj ret start))
+      :else                 (recur (+ start 1) count predicate ret)))
 
 
 (defn make-table [n]
-
     (try
 
-        (let [primes-list (first-n-primes n)]
+        (let [primes-list (first-n-primes n is-prime)]
             (doseq [x (cons 1 primes-list)]
                 (do
                     (doseq [y (cons 1 primes-list)]
